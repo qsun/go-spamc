@@ -253,10 +253,10 @@ func (s *Client) call(cmd string, msgpars []string, onData FnCallback, extraHead
 	default:
 		if cmd != PING {
 			err = errors.New("Message parameters wrong size")
+			return
 		} else {
 			msgpars = []string{""}
 		}
-		return
 	}
 
 	if cmd == REPORT_IGNOREWARNING {
